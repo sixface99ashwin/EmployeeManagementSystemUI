@@ -1,0 +1,24 @@
+main{
+  width:90%;
+  margin:3rem auto 0px;
+}
+.toolbar{
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-designation{
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-designation{
+  width: 50%;
+  height: 90%;
+  border-radius: 0px 0px 10px rgba(34,34,34,0.5);
+}
+tr:hover{
+  background-color: #d6eeee;
+}

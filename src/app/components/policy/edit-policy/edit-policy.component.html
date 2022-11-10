@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 mb-3>Edit Policy Details</h1>
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updatePaymentRule()">
+        <div class="mb-3">
+          <label for="ruleId" class="form-label">Rule Id</label>
+          <input type="text" class="form-control" id="ruleId" readonly
+          name="ruleId" [(ngModel)]="policyDetails.ruleId">
+        </div>
+        <div class="mb-3">
+          <label for="policyname" class="form-label">Policy Name</label>
+          <input type="text" class="form-control" id="policyname"
+          name="policyname" [(ngModel)]="policyDetails.policy">
+        </div>
+        <div class="mb-3">
+          <label for="policyDetail" class="form-label">Department Name</label>
+          <input type="text" class="form-control" id="policyDetail"
+          name="policyDetail" [(ngModel)]="policyDetails.policyDetails">
+        </div>
+        <div>
+
+        <button style="margin-right: 16px;" type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+</div>

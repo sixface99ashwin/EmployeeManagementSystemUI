@@ -1,0 +1,48 @@
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-2 col-lg-5 col-md- offset-lg-4 offset-md-3">
+        <div class="panel border bg-white">
+          <div class="panel-heading">
+            <h3>Request Leave</h3>
+          </div>
+          <div class="panel-body p-3">
+          <form [formGroup]="requestLeaveform">
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="requestLeaveform.controls['leaveType'].dirty && requestLeaveform.hasError('required','leaveType')">
+
+                  <input formControlName="leaveType" type="text" placeholder="Type of Leave">
+                </div>
+              </div>
+              <small *ngIf="requestLeaveform.controls['leaveType'].dirty && requestLeaveform.hasError('required','leaveType')" class="text-danger">*Leave Type is required</small>
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="requestLeaveform.controls['fromDate'].dirty && requestLeaveform.hasError('required','fromDate')">
+                  <input formControlName="fromDate" type="date" placeholder="From Date">
+                  <!-- <span class="fa fa-eye-slash"></span> -->
+                </div>
+              </div>
+              <small *ngIf="requestLeaveform.controls['fromDate'].dirty && requestLeaveform.hasError('required','fromDate')" class="text-danger">*From Date is required</small>
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="requestLeaveform.controls['toDate'].dirty && requestLeaveform.hasError('required','toDate')">
+
+                  <input formControlName="toDate" type="date" placeholder="To Date">
+                  <!-- <span class="fa fa-eye-slash"></span> -->
+                </div>
+              </div>
+              <small *ngIf="requestLeaveform.controls['toDate'].dirty && requestLeaveform.hasError('required','toDate')" class="text-danger">*To Date is required</small>
+               <div class="form-group pt-3">
+                <div class="input-field" [class.error]="requestLeaveform.controls['empId'].dirty && requestLeaveform.hasError('required','empId')">
+
+                  <input formControlName="empId" type="text" placeholder="Employee Id">
+                  <!-- <span class="fa fa-eye-slash"></span> -->
+                </div>
+              </div>
+              <small *ngIf="requestLeaveform.controls['empId'].dirty && requestLeaveform.hasError('required','empId')" class="text-danger">*Employee Id is required</small>
+              <button (click)="submitRequest()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
+
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

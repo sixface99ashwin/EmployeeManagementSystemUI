@@ -1,0 +1,53 @@
+main{
+  width:90%;
+  margin:3rem auto 0px;
+}
+.toolbar{
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-designation{
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-designation{
+  width: 50%;
+  height: 90%;
+  border-radius: 0px 0px 10px rgba(34,34,34,0.5);
+}
+
+
+
+
+.propImg{
+  height:250px;
+  width: 320px;
+}
+.card-img-top{
+  height: 250px;
+
+}
+.card:hover img{
+  transform: scale(1,1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 250px;
+  opacity: .5;
+}
+.card img{
+  transform: scale(1,1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 250px;
+}
+img{
+  width: 100%;
+  border-radius: 1rem;
+}
+.img-wrapper{
+  overflow: hidden;
+}

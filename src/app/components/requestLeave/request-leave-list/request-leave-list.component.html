@@ -1,0 +1,59 @@
+<main class="block-border">
+  <div class="toolbar black-border">
+    <div class="add">
+      <button type="button" [routerLink]="['/requestLeave','add']" class="btn btn-outline-primary btn-lg">Request Leave
+        </button>
+    </div>
+    <div class="search">
+      <input type="search" class="form-control" placeholder="Search Leave Request" [(ngModel)]="filterTerm">
+        </div>
+  </div>
+
+  <ng-container *ngIf="requestLeave && requestLeave.length>0">
+    <div class="container">
+      <!-- <div>
+        <button type="button" [routerLink]="['/designation','add']" class="btn btn-outline-primary">Add Designation</button>
+      </div> -->
+      <div class="card-table">
+        <div class="cart-product">
+
+          <table class="table table-bordered">
+            <thead>
+              <tr *ngIf="requestLeave && requestLeave.length>0" >
+                <th>Sr.No</th>
+                <th>Type of Leave</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>Employee Id</th>
+                <th>Action</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let request of requestLeave | filter:filterTerm let i=index ">
+                <td>{{i+1}}</td>
+                <td>{{request.leaveType}}</td>
+                 <td>{{request.fromDate | date:"fullDate"}}</td>
+                <td>{{request.toDate | date:"fullDate"}}</td>
+                <td>
+                  <a class="btn btn-outline-primary d-flex align-items-center" [routerLink]="['/employee','view',request.empId]" role="button">{{request.empId}}</a>
+                </td>
+
+                <td>
+                  <a class="btn btn-outline-dark d-flex align-items-center" [routerLink]="['/requestLeave','edit',request.requestId]" role="button">View</a>
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger" >
+                    <i class="fa fa-trash" aria-hidden="true" (click)="deleteRequestLeave(request.requestId)"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</main>
+
+

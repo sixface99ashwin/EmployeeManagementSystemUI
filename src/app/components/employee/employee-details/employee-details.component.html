@@ -1,0 +1,101 @@
+<main class="block-border">
+  <div class="toolbar black-border">
+    <!-- <div class="add">
+      <button type="button" [routerLink]="['/designation','add']" class="btn btn-outline-success btn-lg">Add
+        Designation</button>
+    </div> -->
+    <!-- <div class="search-designation">
+      <input type="search" class="form-control" placeholder="Search Designation">
+        (input)="searchDesignation(searchInput.value)" #searchInput>
+    </div> -->
+  </div>
+
+  <div class="container-fluid g-0 p-2">
+    <div class="row g-0">
+      <div class="col-md-2 d-flex justfy-content-center align-items-center">
+        <img class="profile" src={{employeeDetails.imageUrl}}>
+      </div>
+      <div class="col ps-2">
+        <div class="row g-0">
+          <div class="col-md-10 text-center">
+            <span class="name">{{employeeDetails.firstname }}&nbsp; {{employeeDetails.lastName}}</span>
+          </div>
+          <div class="col-md-2 d-flex justify-content-center align-items-center">
+            <div class="btn-group" role="group">
+              <button type="button"[routerLink]="['/employee','edit',employeeDetails.empId]" class="btn btn-outline-success">Edit</button>
+              <button type="button"(click)="deleteEmployee(employeeDetails.empId)" class="btn btn-outline-success">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="row g-0 mt-3">
+          <div class="col-md">
+            <table class="table table-hover mx-auto">
+              <thead clas="text-center fs-5 fst-italic text-secondary">
+                <tr>
+                  <td colspan="2">Personal Details</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>First Name</td>
+                  <td>{{employeeDetails.firstname}}</td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td>{{employeeDetails.lastName}}</td>
+                </tr>
+                <tr>
+                  <td>Email Id</td>
+                  <td>{{employeeDetails.email}}</td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td>{{employeeDetails.gender}}</td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td>{{employeeDetails.phoneNumber}}</td>
+                </tr>
+                <tr>
+                  <td>Salary</td>
+                  <td>{{employeeDetails.salary}}</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>{{employeeDetails.address}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col">
+            <table class="table table-hover mx-auto">
+              <thead clas="text-center fs-5 fst-italic text-secondary">
+                <tr>
+                  <td colspan="2">Job Details</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Employee Id</td>
+                  <td>{{employeeDetails.empId}}</td>
+                </tr>
+                <tr>
+                  <td>Designation Name</td>
+                  <td>{{employeeDetails.designationName}}</td>
+                </tr>
+                <tr>
+                  <td>Role Name</td>
+                  <td>{{employeeDetails.designations.roleName}}</td>
+                </tr>
+                <tr>
+                  <td>Department Name</td>
+                  <td>{{employeeDetails.designations.departmentName}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,30 @@
+<main class="block-border">
+  <div class="toolbar black-border">
+    <div class="add">
+      <button type="button" [routerLink]="['/employee','add']" class="btn btn-outline-success btn-lg">Add Employee</button>
+    </div>
+    <div class="search-designation">
+      <input type="search" class="form-control" placeholder="Search Employee" [(ngModel)]="filterTerm">
+    </div>
+  </div>
+  <div class="row">
+  <div *ngFor="let employee of employees | filter: filterTerm" class="shadow-lg col-sm-4 p-3">
+    <div class="card">
+      <div class="img-wrapper">
+        <img class="card-img-top" src={{employee.imageUrl}}>
+      </div>
+      <div class="card-body p-2">
+        <h5>{{employee.empId}}</h5>
+        <h5>{{employee.firstname}} &nbsp; {{employee.lastName}}</h5>
+        <h5>{{employee.designationName}}</h5>
+      </div>
+      <div class="card-body">
+        <div class="btn-wrapper text-center d-flex justify-content-between">
+          <a class="btn btn-outline-dark d-flex align-items-center" [routerLink]="['/employee','view',employee.empId]" role="button">View</a>
+          <!-- <a class="btn btn-outline-primary pull-left text-dark btn-sm" (click)="deleteEmployee(employee.empId)" role="button">Delete</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </main>

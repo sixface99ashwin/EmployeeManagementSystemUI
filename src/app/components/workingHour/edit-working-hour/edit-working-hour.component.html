@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <h1 mb-3>Add New WorkingHour details</h1>
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updateWorkingHour()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="text" class="form-control" readonly id="id"
+          name="id" [(ngModel)]="workingHourDetails.id">
+        </div>
+        <div class="mb-3">
+          <label for="month" class="form-label">Month</label>
+          <input type="text" class="form-control" id="month"
+          name="month" [(ngModel)]="workingHourDetails.month">
+        </div>
+        <div class="mb-3">
+          <label for="companyWorkingHour" class="form-label">Company WorkingHour</label>
+          <input type="number" class="form-control" id="companyWorkingHour"
+          name="companyWorkingHour" [(ngModel)]="workingHourDetails.companyWorkingHour">
+        </div>
+        <div class="mb-3">
+          <label for="employeeWorkingHour" class="form-label">Employee WorkingHour</label>
+          <input type="number" class="form-control" id="employeeWorkingHour"
+          name="employeeWorkingHour" [(ngModel)]="workingHourDetails.employeeWorkingHour">
+        </div>
+        <div class="mb-3">
+          <label for="empId" class="form-label">Employee Id</label>
+          <input type="text" class="form-control" id="empId"
+          name="empId" [(ngModel)]="workingHourDetails.empId">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+</div>
